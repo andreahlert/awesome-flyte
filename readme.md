@@ -1,18 +1,24 @@
 # Awesome Flyte [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> Kubernetes-native workflow orchestrator for machine learning, data engineering, and analytics pipelines built on top of a strongly typed, multi-language platform.
+> Kubernetes-native workflow orchestrator for machine learning, data engineering, and AI agent pipelines built on a strongly typed, multi-language platform.
 
 ## Contents
 
 - [Official Resources](#official-resources)
-- [SDKs and Libraries](#sdks-and-libraries)
-- [Plugins](#plugins)
+- [SDKs](#sdks)
+- [Flyte 2 Plugins](#flyte-2-plugins)
+  - [AI and LLM](#ai-and-llm)
   - [Cloud and Data Warehouses](#cloud-and-data-warehouses)
   - [Compute Backends](#compute-backends)
   - [ML Frameworks and Tracking](#ml-frameworks-and-tracking)
-  - [Data Processing and Quality](#data-processing-and-quality)
-  - [Notebooks and Interactive](#notebooks-and-interactive)
-  - [Storage and Serialization](#storage-and-serialization)
+  - [Data Processing](#data-processing)
+- [Flyte 1 Plugins](#flyte-1-plugins)
+  - [Cloud and Data Warehouses (v1)](#cloud-and-data-warehouses-v1)
+  - [Compute Backends (v1)](#compute-backends-v1)
+  - [ML Frameworks and Tracking (v1)](#ml-frameworks-and-tracking-v1)
+  - [Data Processing and Quality (v1)](#data-processing-and-quality-v1)
+  - [Notebooks and Interactive (v1)](#notebooks-and-interactive-v1)
+  - [Storage and Serialization (v1)](#storage-and-serialization-v1)
 - [Tools](#tools)
 - [Deployment](#deployment)
 - [Tutorials and Examples](#tutorials-and-examples)
@@ -24,24 +30,66 @@
 ## Official Resources
 
 - [Flyte Documentation](https://docs.flyte.org/) - Comprehensive guides covering architecture, deployment, and usage.
+<!-- lint ignore double-link -->
+- [Flyte 2 User Guide](https://www.union.ai/docs/v2/flyte/user-guide/) - Official documentation for Flyte 2 workflows and SDK.
 - [Flyte Blog](https://flyte.org/blog) - Official blog with release notes, case studies, and technical deep dives.
-- [Flyte GitHub](https://github.com/flyteorg/flyte) - Main repository with core platform source code.
+- [Flyte GitHub](https://github.com/flyteorg/flyte) - Monorepo with backend services, Helm charts, and interface definitions.
 - [FlyteSnacks](https://github.com/flyteorg/flytesnacks) - Cookbook of practical examples and integration tutorials.
 - [Flyte Conference Talks](https://github.com/flyteorg/flyte-conference-talks) - Slide decks and materials from conference presentations.
 <!-- lint ignore double-link -->
 - [Flyte YouTube](https://www.youtube.com/channel/UCNduEoLOToNo3nFVly-vUTQ) - Official channel with demos, community syncs, and talks.
+- [Flyte 1 to 2 Migration Guide](https://www.union.ai/docs/v2/byoc/user-guide/flyte-2/) - Guide for migrating workflows from Flyte 1 to Flyte 2.
 
-## SDKs and Libraries
+## SDKs
 
-- [flytekit](https://github.com/flyteorg/flytekit) - Python SDK for authoring tasks and workflows with type-safe interfaces.
-- [flyte-sdk](https://github.com/flyteorg/flyte-sdk) - Next-generation Python SDK with async/await and simplified APIs for Flyte 2.
+<!-- lint ignore double-link -->
+- [flyte-sdk](https://github.com/flyteorg/flyte-sdk) - Flyte 2 Python SDK with async/await, pure Python control flow, and `flyte` CLI.
+- [flytekit](https://github.com/flyteorg/flytekit) - Flyte 1 Python SDK using `@task` and `@workflow` decorators with `pyflyte` CLI.
 - [flytekit-java](https://github.com/flyteorg/flytekit-java) - Java and Scala SDK for authoring workflows.
-- [flyteidl](https://github.com/flyteorg/flyteidl) - Protobuf interface definitions shared across all Flyte components.
-- [flytestdlib](https://github.com/flyteorg/flytestdlib) - Go standard library with shared utilities used by Flyte backend services.
 
-## Plugins
+## Flyte 2 Plugins
+
+<!-- lint ignore double-link -->
+Flyte 2 plugins live in the [flyte-sdk/plugins](https://github.com/flyteorg/flyte-sdk/tree/main/plugins) directory and install via `pip install flyte[plugin-name]`.
+
+### AI and LLM
+
+- [OpenAI](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/openai) - Call OpenAI APIs for chat completions and embeddings within tasks.
+- [Anthropic](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/anthropic) - Integrate Anthropic Claude models into Flyte workflows.
+- [Gemini](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/gemini) - Use Google Gemini models for generative AI tasks.
+- [vLLM](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/vllm) - Serve and run inference with large language models via vLLM.
+- [SGLang](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/sglang) - Structured generation and LLM programming with SGLang.
+- [Codegen](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/codegen) - Generate and execute code within Flyte tasks.
+- [Human-in-the-Loop](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/hitl) - Pause workflows for human review, approval, or annotation.
 
 ### Cloud and Data Warehouses
+
+- [BigQuery](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/bigquery) - Run SQL queries and manage datasets in Google BigQuery.
+- [Snowflake](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/snowflake) - Execute queries and orchestrate data pipelines on Snowflake.
+- [Databricks](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/databricks) - Submit and monitor jobs on Databricks clusters.
+
+### Compute Backends
+
+- [Spark](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/spark) - Run PySpark and Spark jobs as native Flyte tasks.
+- [Ray](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/ray) - Distribute computation across Ray clusters from within workflows.
+- [Dask](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/dask) - Scale Python workloads using Dask distributed computing.
+- [PyTorch](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/pytorch) - Run distributed PyTorch training jobs.
+
+### ML Frameworks and Tracking
+
+- [MLflow](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/mlflow) - Track experiments and log models using MLflow.
+- [Weights & Biases](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/wandb) - Log metrics, artifacts, and visualizations to W&B.
+
+### Data Processing
+
+- [Polars](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/polars) - Use Polars DataFrames as native Flyte types.
+- [JSONL](https://github.com/flyteorg/flyte-sdk/tree/main/plugins/jsonl) - Read and write JSONL files as structured data in workflows.
+
+## Flyte 1 Plugins
+
+Flyte 1 plugins live in the [flytekit/plugins](https://github.com/flyteorg/flytekit/tree/master/plugins) directory and install via `pip install flytekitplugins-name`. These work with `flytekit` (v1 SDK).
+
+### Cloud and Data Warehouses (v1)
 
 - [AWS Athena](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-aws-athena) - Run SQL queries against data in S3 using Amazon Athena.
 - [AWS Batch](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-aws-batch) - Execute tasks on AWS Batch for large-scale batch processing.
@@ -50,7 +98,7 @@
 - [Snowflake](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-snowflake) - Execute queries and orchestrate data pipelines on Snowflake.
 - [Hive](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-hive) - Submit and manage Apache Hive queries.
 
-### Compute Backends
+### Compute Backends (v1)
 
 - [Spark](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-spark) - Run PySpark and Spark jobs as native Flyte tasks.
 - [Ray](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-ray) - Distribute computation across Ray clusters from within workflows.
@@ -59,7 +107,7 @@
 - [Kubernetes Pod](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-k8s-pod) - Run tasks as fully customizable Kubernetes pods.
 - [MMCloud](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-mmcloud) - Execute tasks on MemVerge Memory Machine Cloud for cost-optimized spot instances.
 
-### ML Frameworks and Tracking
+### ML Frameworks and Tracking (v1)
 
 - [PyTorch / Kubeflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-kf-pytorch) - Run distributed PyTorch training with Kubeflow PyTorch Operator.
 - [TensorFlow / Kubeflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-kf-tensorflow) - Run distributed TensorFlow training with Kubeflow TF Operator.
@@ -73,7 +121,7 @@
 - [ONNX TensorFlow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-onnx-tensorflow) - Export and serve TensorFlow models in ONNX format.
 - [ONNX scikit-learn](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-onnx-scikitlearn) - Export and serve scikit-learn models in ONNX format.
 
-### Data Processing and Quality
+### Data Processing and Quality (v1)
 
 - [Polars](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-polars) - Use Polars DataFrames as native Flyte types.
 - [Modin](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-modin) - Accelerate Pandas workflows with Modin parallelization.
@@ -86,27 +134,25 @@
 - [SQLAlchemy](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-sqlalchemy) - Query any SQLAlchemy-compatible database from Flyte tasks.
 - [OmegaConf](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-omegaconf) - Use OmegaConf structured configs as Flyte types.
 
-### Notebooks and Interactive
+### Notebooks and Interactive (v1)
 
 - [Papermill](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-papermill) - Execute parameterized Jupyter notebooks as Flyte tasks.
 - [FlyteInteractive](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-flyteinteractive) - Attach a VS Code server to running tasks for live debugging.
 
-### Storage and Serialization
+### Storage and Serialization (v1)
 
 - [Deck Standard](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-deck-standard) - Render rich HTML visualizations for task outputs in Flyte Console.
-- [async-fsspec](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-data-fsspec) - Async-compatible filesystem abstraction for cloud storage backends.
 - [envd](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-envd) - Build reproducible container images using envd declarative configs.
 - [Memray](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-memray) - Profile memory usage of Flyte tasks using Memray.
-- [Identity Aware Proxy](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-identity-aware-proxy) - Authenticate with Google Cloud Identity Aware Proxy.
 
 ## Tools
 
-- [flytectl](https://github.com/flyteorg/flytectl) - Cross-platform CLI for managing Flyte projects, workflows, and executions.
+<!-- lint ignore double-link -->
+- [Flyte CLI](https://github.com/flyteorg/flyte-sdk) - Built into flyte-sdk, provides `flyte run`, `flyte deploy`, and `flyte serve` commands.
 - [pytest-flyte](https://github.com/flyteorg/pytest-flyte) - Pytest plugin for testing Flyte tasks and workflows locally.
 - [flytekit-python-template](https://github.com/flyteorg/flytekit-python-template) - Cookiecutter templates for bootstrapping new Flyte projects.
 - [Airflow Provider for Flyte](https://github.com/flyteorg/airflow-provider-flyte) - Trigger and monitor Flyte executions from Apache Airflow DAGs.
-- [flytecopilot](https://github.com/flyteorg/flytecopilot) - Sidecar container that handles data input/output for raw container tasks.
-- [Homebrew Tap](https://github.com/flyteorg/homebrew-tap) - Install flytectl via Homebrew on macOS and Linux.
+- [Homebrew Tap](https://github.com/flyteorg/homebrew-tap) - Install Flyte tools via Homebrew on macOS and Linux.
 
 ## Deployment
 
@@ -117,14 +163,16 @@
 
 ## Tutorials and Examples
 
-- [Getting Started](https://docs.flyte.org/en/latest/getting_started/index.html) - Official quickstart guide from installation to first workflow.
+<!-- lint ignore double-link -->
+- [Getting Started with Flyte 2](https://www.union.ai/docs/v2/flyte/user-guide/) - Official quickstart for the new SDK and workflow model.
+- [Getting Started with Flyte 1](https://docs.flyte.org/en/latest/getting_started/index.html) - Classic quickstart guide for flytekit-based workflows.
 <!-- lint ignore double-link -->
 - [FlyteSnacks Examples](https://flytesnacks.readthedocs.io/) - Rendered documentation of all FlyteSnacks examples with explanations.
 - [FlyteLabML Projects](https://github.com/flyteorg/flytelab) - End-to-end ML projects demonstrating real-world patterns.
-- [Flyte the Hard Way](https://docs.flyte.org/en/latest/community/troubleshoot.html) - Troubleshooting guide for common deployment and development issues.
 
 ## Talks and Videos
 
+- [Introducing Flyte 2.0](https://www.union.ai/blog-post/introducing-flyte-2-0-dynamic-crash-proof-resource-aware-ai-orchestration) - Announcement blog post with architecture overview and motivation.
 - [Flyte at KubeCon 2022](https://www.youtube.com/watch?v=erUhSbJ0RWU) - Introducing Flyte as a Kubernetes-native ML orchestrator.
 - [Flyte at SciPy 2022](https://www.youtube.com/watch?v=iBBzmTT9Peg) - Building reproducible data and ML pipelines with Flyte.
 - [Flyte at PyData Global 2022](https://www.youtube.com/watch?v=KdHBkaAp47Q) - From notebook to production with Flyte.
@@ -134,8 +182,8 @@
 
 ## Blog Posts and Articles
 
-- [Flyte vs Airflow vs Prefect vs Dagster](https://flyte.org/blog/flyte-vs-airflow-vs-prefect-vs-dagster) - Comparison of major workflow orchestration platforms.
 - [Introducing Flyte: A Cloud Native Machine Learning and Data Processing Platform](https://eng.lyft.com/introducing-flyte-cloud-native-machine-learning-and-data-processing-platform-fb2bb3046a59) - Original announcement from Lyft Engineering.
+- [Flyte vs Airflow vs Prefect vs Dagster](https://flyte.org/blog/flyte-vs-airflow-vs-prefect-vs-dagster) - Comparison of major workflow orchestration platforms.
 - [Building a Gateway to the ML Platform](https://www.linkedin.com/blog/engineering/ml-ai/building-a-gateway-to-our-ml-platform) - How LinkedIn adopted Flyte for ML infrastructure.
 - [Scaling Spotify's ML Infrastructure with Flyte](https://flyte.org/blog/spotify-case-study) - Spotify's journey to production ML with Flyte.
 - [How Gojek Uses Flyte](https://flyte.org/blog/gojek-case-study) - Data platform orchestration at scale in Southeast Asia.
