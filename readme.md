@@ -28,6 +28,7 @@
 - [Flyte GitHub](https://github.com/flyteorg/flyte) - Main repository with core platform source code.
 - [FlyteSnacks](https://github.com/flyteorg/flytesnacks) - Cookbook of practical examples and integration tutorials.
 - [Flyte Conference Talks](https://github.com/flyteorg/flyte-conference-talks) - Slide decks and materials from conference presentations.
+<!-- lint ignore double-link -->
 - [Flyte YouTube](https://www.youtube.com/channel/UCNduEoLOToNo3nFVly-vUTQ) - Official channel with demos, community syncs, and talks.
 
 ## SDKs and Libraries
@@ -55,14 +56,14 @@
 - [Ray](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-ray) - Distribute computation across Ray clusters from within workflows.
 - [Dask](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-dask) - Scale Python workloads using Dask distributed computing.
 - [MPI / Kubeflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-kf-mpi) - Run distributed training with MPI via Kubeflow MPI Operator.
-- [K8s Pod](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-k8s-pod) - Run tasks as fully customizable Kubernetes pods.
+- [Kubernetes Pod](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-k8s-pod) - Run tasks as fully customizable Kubernetes pods.
 - [MMCloud](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-mmcloud) - Execute tasks on MemVerge Memory Machine Cloud for cost-optimized spot instances.
 
 ### ML Frameworks and Tracking
 
 - [PyTorch / Kubeflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-kf-pytorch) - Run distributed PyTorch training with Kubeflow PyTorch Operator.
 - [TensorFlow / Kubeflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-kf-tensorflow) - Run distributed TensorFlow training with Kubeflow TF Operator.
-- [HuggingFace](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-huggingface) - Integrate Hugging Face datasets and models as Flyte types.
+- [Hugging Face](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-huggingface) - Integrate Hugging Face datasets and models as Flyte types.
 - [MLflow](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-mlflow) - Track experiments and log models using MLflow.
 - [Weights & Biases](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-wandb) - Log metrics, artifacts, and visualizations to W&B.
 - [Comet ML](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-comet-ml) - Track experiments and manage model metadata with Comet.
@@ -75,7 +76,7 @@
 ### Data Processing and Quality
 
 - [Polars](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-polars) - Use Polars DataFrames as native Flyte types.
-- [Modin](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-modin) - Accelerate pandas workflows with Modin parallelization.
+- [Modin](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-modin) - Accelerate Pandas workflows with Modin parallelization.
 - [Vaex](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-vaex) - Handle out-of-core DataFrames with Vaex integration.
 - [DuckDB](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-duckdb) - Run analytical SQL queries using embedded DuckDB.
 - [Pandera](https://github.com/flyteorg/flytekit/tree/master/plugins/flytekit-pandera) - Validate DataFrames at task boundaries using Pandera schemas.
@@ -117,7 +118,8 @@
 ## Tutorials and Examples
 
 - [Getting Started](https://docs.flyte.org/en/latest/getting_started/index.html) - Official quickstart guide from installation to first workflow.
-- [FlyteSnacks](https://github.com/flyteorg/flytesnacks) - Extensive collection of examples covering core features and integrations.
+<!-- lint ignore double-link -->
+- [FlyteSnacks Examples](https://flytesnacks.readthedocs.io/) - Rendered documentation of all FlyteSnacks examples with explanations.
 - [FlyteLabML Projects](https://github.com/flyteorg/flytelab) - End-to-end ML projects demonstrating real-world patterns.
 - [Flyte the Hard Way](https://docs.flyte.org/en/latest/community/troubleshoot.html) - Troubleshooting guide for common deployment and development issues.
 
