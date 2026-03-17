@@ -20,7 +20,6 @@ jobs:
             --verbose
             --no-progress
             --accept 100..=399
-            --exclude-mail
             --exclude '^https://www\.linkedin\.com'
             --exclude '^https://www\.lyft\.com'
             --exclude '^https://www\.spotify\.com'
