@@ -1,6 +1,6 @@
 # Awesome Flyte [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> Kubernetes-native workflow orchestrator for machine learning, data engineering, and AI agent pipelines built on a strongly typed, multi-language platform.
+> Dynamic, resilient AI orchestration for building fault-tolerant workflows and agents. The most intuitive, developer-loved way to orchestrate AI in open source, now available for local execution.
 
 ## Contents
 
