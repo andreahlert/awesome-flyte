@@ -159,7 +159,7 @@ Flyte 1 plugins live in the [flytekit/plugins](https://github.com/flyteorg/flyte
 - [Flyte Helm Chart](https://github.com/flyteorg/flyte/tree/master/charts/flyte-core) - Production Helm chart for deploying Flyte on Kubernetes.
 - [Flyte Binary](https://github.com/flyteorg/flyte/tree/master/charts/flyte-binary) - Lightweight single-binary deployment for development and small teams.
 - [Flyte Sandbox](https://github.com/flyteorg/flyte/tree/master/charts/flyte-sandbox) - Local sandbox environment using a single Docker container.
-- [Deployment Documentation](https://www.union.ai/docs/flyte/deployment/) - Guides for deploying on AWS, GCP, and Azure.
+- [Deployment Documentation](https://www.union.ai/docs/flyte/deployment/) - Platform deployment architecture and configuration guides.
 
 ## Tutorials and Examples
 
@@ -167,28 +167,19 @@ Flyte 1 plugins live in the [flytekit/plugins](https://github.com/flyteorg/flyte
 - [Getting Started with Flyte 2](https://www.union.ai/docs/v2/flyte/user-guide/) - Official quickstart for the new SDK and workflow model.
 - [Getting Started with Flyte 1](https://www.union.ai/docs/flyte/user-guide/) - Classic quickstart guide for flytekit-based workflows.
 <!-- lint ignore double-link -->
-- [FlyteSnacks Examples](https://www.union.ai/docs/flyte/tutorials/) - Rendered documentation of all FlyteSnacks examples with explanations.
+- [Flyte Tutorials](https://www.union.ai/docs/flyte/tutorials/) - Official tutorials covering AI, ML, and data workflow patterns.
 - [FlyteLabML Projects](https://github.com/flyteorg/flytelab) - End-to-end ML projects demonstrating real-world patterns.
 
 ## Talks and Videos
 
 - [Introducing Flyte 2.0](https://www.union.ai/blog-post/introducing-flyte-2-0-dynamic-crash-proof-resource-aware-ai-orchestration) - Announcement blog post with architecture overview and motivation.
-- [Flyte at KubeCon 2022](https://www.youtube.com/watch?v=erUhSbJ0RWU) - Introducing Flyte as a Kubernetes-native ML orchestrator.
-- [Flyte at SciPy 2022](https://www.youtube.com/watch?v=iBBzmTT9Peg) - Building reproducible data and ML pipelines with Flyte.
-- [Flyte at PyData Global 2022](https://www.youtube.com/watch?v=KdHBkaAp47Q) - From notebook to production with Flyte.
-- [Flyte at PyData Seattle 2023](https://www.youtube.com/watch?v=7oQ0pXdn4gw) - Scaling ML workflows in production.
-- [Flyte at SciPy 2023](https://www.youtube.com/watch?v=dJXiHkNpRs4) - Leveraging Flyte for scientific computing workflows.
-- [Flyte Community Syncs](https://www.youtube.com/playlist?list=PLmQd1BBY9MWoaLIFfJYGPee_puBMzzJsr) - Monthly community meetings with feature demos and discussions.
 
 ## Blog Posts and Articles
 
-- [Introducing Flyte: A Cloud Native Machine Learning and Data Processing Platform](https://flyte.org/blog/introducing-flyte-a-cloud-native-machine-learning-and-data-processing-platform) - Original announcement from Lyft Engineering.
-- [Flyte vs Airflow vs Prefect vs Dagster](https://flyte.org/blog/flyte-vs-airflow-vs-prefect-vs-dagster) - Comparison of major workflow orchestration platforms.
-- [How LinkedIn Adopted Flyte for ML Infrastructure](https://flyte.org/blog/linkedin-case-study) - Case study on LinkedIn's ML platform powered by Flyte.
-- [Scaling Spotify's ML Infrastructure with Flyte](https://flyte.org/blog/spotify-case-study) - Spotify's journey to production ML with Flyte.
-- [How Gojek Uses Flyte](https://flyte.org/blog/gojek-case-study) - Data platform orchestration at scale in Southeast Asia.
-- [Building Reproducible ML Pipelines](https://flyte.org/blog/building-reproducible-ml-pipelines) - Patterns for deterministic, auditable workflows.
-- [Mapping Tasks in Flyte](https://flyte.org/blog/flyte-map-task) - Scaling embarrassingly parallel workloads.
+- [Spotify Cuts Quarterly Forecast Time in Half with Flyte](https://www.union.ai/case-study/to-deliver-complex-financial-reports-spotify-turns-to-flyte) - How Spotify uses Flyte to streamline financial forecasting workflows.
+- [Gojek Scales ML Operations and Cuts Costs with Flyte](https://www.union.ai/case-study/to-drive-its-growing-services-gojek-looks-to-flyte) - Data platform orchestration at scale in Southeast Asia.
+- [Achieving Reproducible Workflows with Flyte](https://www.union.ai/blog-post/achieving-reproducible-workflows-with-flyte) - How Flyte's versioning, typing, and containerization solve reproducibility.
+- [Build Indestructible Pipelines with Flyte](https://www.union.ai/blog-post/build-indestructible-pipelines-with-flyte) - Retry mechanisms, caching, and recovery mode for resilient pipelines.
 
 ## Companies Using Flyte
 
@@ -201,9 +192,8 @@ Flyte 1 plugins live in the [flytekit/plugins](https://github.com/flyteorg/flyte
 - [Gojek](https://www.gojek.com/) - On-demand services across Southeast Asia.
 - [Wolt](https://wolt.com/) - Delivery optimization and demand forecasting.
 - [Freenome](https://www.freenome.com/) - Genomics and cancer detection pipelines.
-- [Recogni](https://www.recogni.com/) - Autonomous vehicle perception models.
+- [Tensordyne](https://www.tensordyne.ai/) - Autonomous vehicle perception models (formerly Recogni).
 - [LatchBio](https://latch.bio/) - Bioinformatics workflow platform built on Flyte.
-- [Pachama](https://pachama.com/) - Climate tech and forest carbon monitoring.
 - [Bazaarvoice](https://www.bazaarvoice.com/) - Content moderation and sentiment analysis.
 - [Striveworks](https://www.striveworks.com/) - Defense and government ML operations.
 - [MethaneSAT](https://www.methanesat.org/) - Satellite data processing for methane tracking.
@@ -212,7 +202,7 @@ Flyte 1 plugins live in the [flytekit/plugins](https://github.com/flyteorg/flyte
 
 - [Slack](https://slack.flyte.org/) - Active community workspace for questions and discussions.
 - [GitHub Discussions](https://github.com/flyteorg/flyte/discussions) - Async Q&A and feature proposals.
-- [Monthly Community Sync](https://www.union.ai/docs/flyte/community/) - First Tuesday of every month with demos and roadmap updates.
+- [Community](https://www.union.ai/docs/flyte/community/) - How to join the community, contribute, and stay connected.
 - [Contributing Guide](https://www.union.ai/docs/flyte/community/contributing-code/) - How to contribute to the Flyte ecosystem.
 - [RFC Process](https://github.com/flyteorg/flyte/tree/master/rfc) - Request for comments on major design decisions.
 
